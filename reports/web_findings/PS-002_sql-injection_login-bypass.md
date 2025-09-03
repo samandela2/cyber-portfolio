@@ -2,12 +2,12 @@
 
 **Finding:** SQL injection login bypass (authentication)  
 **Severity:** High  
-**Date:** <2025-09-02>  
+**Date:** 2025-09-02  
 **Lab:** PortSwigger – SQL injection vulnerability allowing login bypass
 
 **Endpoint / Param:** `/login` (username)
 
-**PoC Payload(s):**
+**PoC Payload(s):** OR 1=1--␠
 
 ' OR 1=1--␠
 
