@@ -59,7 +59,7 @@ Arbitrary JavaScript executes in the victim’s browser in the context of `<lab-
 ## Artifacts
 
 - Screenshot(s):
-  ![Alert popup](/Users/christopheraraque/Library/Mobile Documents/com~apple~CloudDocs/PortswiggerLabs/evidence/ps-xss/alert-popup.png)
+  ![Alert popup](../../evidence/ps-xss/alert-popup.png)
   ![Lab solved](../../evidence/ps-xss/alert-popup.png)
   [Open File](../../evidence/ps-xss/alert-popup.png)
 
