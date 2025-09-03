@@ -1,0 +1,17 @@
+
+# Cyber Portfolio — Christopher Araque
+Legal home‑lab reports and findings (VMs / intentionally vulnerable targets).
+
+## Structure
+- reports/
+  - web_findings/    # PortSwigger & web app issues (Issue → Impact → Fix)
+  - soc_incidents/   # Wireshark/SIEM mini incident reports
+- evidence/          # Screenshots, request/response snippets
+- queries/           # SPL/SQL queries used in analysis
+
+## Notes
+- All work performed in legal lab environments only.
+- Each report includes steps to reproduce, impact, and concrete fixes.
+
+## Index
+- PS‑002: SQL injection login bypass → reports/web_findings/PS-002_sql-injection_login-bypass.md
