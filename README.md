@@ -17,3 +17,4 @@ Legal home‑lab reports and findings (VMs / intentionally vulnerable targets).
 - PS‑002: SQL injection login bypass → reports/web_findings/PS-002_sql-injection_login-bypass.md
 - PS‑001: Reflected XSS (attribute) → reports/web_findings/PS-001_reflected-xss_attribute.md
 - PS‑001 (HTML ctx): Reflected XSS (search) → reports/web_findings/2025-09-02_ps-reflected-xss_search.md
+- PS‑003: SQLi UNION (data retrieval) → reports/web_findings/PS-003_sqli_union.md
