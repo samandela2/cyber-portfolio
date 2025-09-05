@@ -1,6 +1,6 @@
 # PS-004 — Insecure Direct Object Reference (IDOR / BOLA)
 
-**Date / Analyst:** 2025-09-03 — Christopher Araque  
+**Date / Analyst:** 2025-09-03 — Christopher Araque
 **Environment:** PortSwigger WSA — “User ID controlled by request parameter”
 
 ## TL;DR
@@ -33,9 +33,9 @@ Cookie: session=<redacted>
 ## Evidence
 
 - Screenshot:
-  [PS-004]! (../../evidence/ps-idor/ps-004-screenshot.png)
+  ![PS-004](../../evidence/ps-idor/ps-004-screenshot.png)
 - Request:
-  [PS-004-request.txt](../../evidence/ps%20idor/ps-004-request.rtf)
+  [PS-004-request.txt](../../evidence/ps-idor/ps-004-request.txt)
 
 ## Impact
 
