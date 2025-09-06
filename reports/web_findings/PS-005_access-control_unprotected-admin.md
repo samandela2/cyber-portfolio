@@ -22,7 +22,7 @@
 - Screenshot:
   ![PS-005](../../evidence/ps-access/ps-005-screenshot.png)
 - Request:
-  [PS-005-request.txt](../../evidence/ps-access/ps-005-requests.txt)
+  [PS-005-request.txt](../../evidence/ps-access/ps-005-request.txt)
 
 
 ## PoC (key lines)
@@ -46,3 +46,9 @@ Unauthorized administrative actions (account deletion/role changes), leading to 
 - Server-side authorization on all admin routes (role/permission checks).
 - Do not expose admin paths; defense-in-depth (rate-limit/WAF for admin endpoints).
 - Least-privileged app/service accounts; audit logs/alerts for admin actions.
+
+## OWASP Top 10:
+  A01 – Broken Access Control
+
+## CWE‑285:
+  Improper Authorization
