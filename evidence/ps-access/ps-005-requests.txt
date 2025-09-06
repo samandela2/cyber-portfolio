@@ -1,0 +1,10 @@
+Request
+GET /administrator-panel/delete?username=carlos HTTP/2
+Host: 0a1e0086040cf48780683f9a00f400bd.web-security-academy.net
+Cookie: session=<redacted>
+
+Response
+HTTP/2 302 Found
+Location: /administrator-panel
+X-Frame-Options: SAMEORIGIN
+Content-Length: 0
