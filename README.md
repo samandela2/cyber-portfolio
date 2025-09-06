@@ -19,3 +19,4 @@ Legal home‑lab reports and findings (VMs / intentionally vulnerable targets).
 - PS‑001 (HTML ctx): Reflected XSS (search) → reports/web_findings/2025-09-02_ps-reflected-xss_search.md
 - PS‑003: SQLi UNION (data retrieval) → reports/web_findings/PS-003_sqli_union.md
 - PS‑004: IDOR (BOLA) → reports/web_findings/PS-004_idor.md
+- PS‑005: Unprotected admin functionality → reports/web_findings/PS-005_access-control_unprotected-admin.md
