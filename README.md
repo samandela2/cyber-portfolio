@@ -20,3 +20,4 @@ Legal home‑lab reports and findings (VMs / intentionally vulnerable targets).
 - PS‑003: SQLi UNION (data retrieval) → reports/web_findings/PS-003_sqli_union.md
 - PS‑004: IDOR (BOLA) → reports/web_findings/PS-004_idor.md
 - PS‑005: Unprotected admin functionality → reports/web_findings/PS-005_access-control_unprotected-admin.md
+- PS‑006: CSRF (missing/invalid token) → reports/web_findings/PS-006_csrf_no-token-validation.md
