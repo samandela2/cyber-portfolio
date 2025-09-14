@@ -22,3 +22,4 @@ Legal home‑lab reports and findings (VMs / intentionally vulnerable targets).
 - PS‑005: Unprotected admin functionality → reports/web_findings/PS-005_access-control_unprotected-admin.md
 - PS‑006: CSRF (missing/invalid token) → reports/web_findings/PS-006_csrf_no-token-validation.md
 - PS‑007: Path Traversal (basic) → reports/web_findings/PS-007_path-traversal_basic.md
+- PS‑008: SSRF (basic) → reports/web_findings/PS-008_ssrf_basic.md
