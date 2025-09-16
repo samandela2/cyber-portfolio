@@ -1,0 +1,1 @@
+=== Paste raw HTTP request/response that shows allow-list bypass via redirect ===

