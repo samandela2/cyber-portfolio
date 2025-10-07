@@ -25,3 +25,4 @@ Legal home‑lab reports and findings (VMs / intentionally vulnerable targets).
 - PS‑008: SSRF (basic) → reports/web_findings/PS-008_ssrf_basic.md
 - PS‑009: SSRF via redirect hop (allow‑list bypass) → reports/web_findings/PS-009_ssrf_redirect-hop.md
 - PS‑010: OS command injection (basic) → reports/web_findings/PS-010_command-injection_basic.md
+- **PS‑013 — Method‑based ACL bypass (speed‑run)** → reports/web_findings/PS-013_method-acl-bypass.md
