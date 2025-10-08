@@ -25,16 +25,17 @@ Change request method → GET; set username=wiener&action=upgrade; Send → succ
 
 - Method‑dependent authorization: POST is restricted, but GET path does the same action (or the edge routes an unknown method like GET), and the origin doesn’t re‑check privileges for GET.
 
-## Detection tips
+## Detection (Blue Team)
+- Alert on **state-changing endpoints** (e.g., `/admin*`) invoked with **GET/HEAD/OPTIONS**.
 
-- Alert on method anomalies (e.g., POSTX, X-HTTP-Method-Override).
+- Flag unknown/rare methods (e.g., `POSTX`) or **method‑override headers** (`X-HTTP-Method-Override`, `X-Original-Method`).
 
-- Compare edge vs origin method in logs; flag GET to state‑changing endpoints.
+- Compare **edge vs origin** logs for the same request ID: if methods differ, raise high‑sev anomaly.
 
 ## Remediation
 
-- Enforce idempotent vs non‑idempotent method semantics; state changes must not be exposed via GET.
+- Enforce **authorization at the origin per action**, not per method; POST/GET must both require admin.
 
-- Reject unknown methods with 405 (do not route/fallback).
+- Return **405 Method Not Allowed** for disallowed verbs; remove/fail closed on method‑override headers unless explicitly required.
 
-- Apply authorization per action, independent of method; disable method‑override headers unless explicitly required.
+- Require **CSRF**/anti‑replay on any state change; ensure **idempotent semantics** (no role changes via GET).
